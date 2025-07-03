@@ -156,12 +156,12 @@ def split_haycorns(quantity):
     for i in range(1, quantity + 1):
         if quantity % i == 0:
             result.append(i)
-    print(result)
+    return result
 
 
 print("Problem 10:")
-split_haycorns(6)
-split_haycorns(1)
+print(split_haycorns(6))
+print(split_haycorns(1))
 print()
 
 
@@ -172,13 +172,13 @@ def tiggerfy(s):
     for letter in s.lower():
         if letter not in tiger:
             result += letter
-    print(result)
+    return result
 
 
 print("Problem 11:")
-tiggerfy("suspicerous")
-tiggerfy("Trigger")
-tiggerfy("Hunny")
+print(tiggerfy("suspicerous"))
+print(tiggerfy("Trigger"))
+print(tiggerfy("Hunny"))
 print()
 
 
@@ -188,13 +188,13 @@ def locate_thistles(items):
     for i, item in enumerate(items):
         if "thistle" in item:
             result.append(i)
-    print(result)
+    return result
 
 
 print("Problem 12:")
 items = ["thistle", "stick", "carrot", "thistle", "eeyore's tail"]
-locate_thistles(items)
+print(locate_thistles(items))
 
 items = ["book", "bouncy ball", "leaf", "red balloon"]
-locate_thistles(items)
+print(locate_thistles(items))
 print()
