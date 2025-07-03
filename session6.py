@@ -23,22 +23,25 @@ def manage_stage_changes(changes):
     return performance
 
 
-# print(
-#     manage_stage_changes(
-#         ["Schedule A", "Schedule B", "Cancel", "Schedule C", "Reschedule", "Schedule D"]
-#     )
-# )
-# print(
-#     manage_stage_changes(
-#         ["Schedule A", "Cancel", "Schedule B", "Cancel", "Reschedule", "Cancel"]
-#     )
-# )
-# print(
-#     manage_stage_changes(["Schedule X", "Schedule Y", "Cancel", "Cancel", "Schedule Z"])
-# )
+print("Problem 1:")
+print(
+    manage_stage_changes(
+        ["Schedule A", "Schedule B", "Cancel", "Schedule C", "Reschedule", "Schedule D"]
+    )
+)
+print(
+    manage_stage_changes(
+        ["Schedule A", "Cancel", "Schedule B", "Cancel", "Reschedule", "Cancel"]
+    )
+)
+print(
+    manage_stage_changes(["Schedule X", "Schedule Y", "Cancel", "Cancel", "Schedule Z"])
+)
+print()
 
 
 def process_performance_requests(requests):
+    """Problem 2"""
     queue = []
     requests.sort(reverse=True)
     for perf in requests:
@@ -46,26 +49,29 @@ def process_performance_requests(requests):
     return queue
 
 
-# print(process_performance_requests([(3, "Dance"), (5, "Music"), (1, "Drama")]))
-# print(
-#     process_performance_requests(
-#         [(2, "Poetry"), (1, "Magic Show"), (4, "Concert"), (3, "Stand-up Comedy")]
-#     )
-# )
-# print(
-#     process_performance_requests(
-#         [
-#             (1, "Art Exhibition"),
-#             (3, "Film Screening"),
-#             (2, "Workshop"),
-#             (5, "Keynote Speech"),
-#             (4, "Panel Discussion"),
-#         ]
-#     )
-# )
+print("Problem 2:")
+print(process_performance_requests([(3, "Dance"), (5, "Music"), (1, "Drama")]))
+print(
+    process_performance_requests(
+        [(2, "Poetry"), (1, "Magic Show"), (4, "Concert"), (3, "Stand-up Comedy")]
+    )
+)
+print(
+    process_performance_requests(
+        [
+            (1, "Art Exhibition"),
+            (3, "Film Screening"),
+            (2, "Workshop"),
+            (5, "Keynote Speech"),
+            (4, "Panel Discussion"),
+        ]
+    )
+)
+print()
 
 
 def collect_festival_points(points):
+    """Problem 3"""
     stack = []
     sum = 0
     for booth in points:
@@ -74,12 +80,15 @@ def collect_festival_points(points):
     return sum
 
 
-# print(collect_festival_points([5, 8, 3, 10]))
-# print(collect_festival_points([2, 7, 4, 6]))
-# print(collect_festival_points([1, 5, 9, 2, 8]))
+print("Problem 3:")
+print(collect_festival_points([5, 8, 3, 10]))
+print(collect_festival_points([2, 7, 4, 6]))
+print(collect_festival_points([1, 5, 9, 2, 8]))
+print()
 
 
 def booth_navigation(clues):
+    """Problem 4"""
     stack = []
     for clue in clues:
         if clue != "back":
@@ -90,17 +99,20 @@ def booth_navigation(clues):
     return stack
 
 
-# clues = [1, 2, "back", 3, 4]
-# print(booth_navigation(clues))
+print("Problem 4:")
+clues = [1, 2, "back", 3, 4]
+print(booth_navigation(clues))
 
-# clues = [5, 3, 2, "back", "back", 7]
-# print(booth_navigation(clues))
+clues = [5, 3, 2, "back", "back", 7]
+print(booth_navigation(clues))
 
-# clues = [1, "back", 2, "back", "back", 3]
-# print(booth_navigation(clues))
+clues = [1, "back", 2, "back", "back", 3]
+print(booth_navigation(clues))
+print()
 
 
 def merge_schedules(schedule1, schedule2):
+    """Problem 5"""
     pointer1 = 0
     pointer2 = 0
     result = ""
@@ -120,6 +132,7 @@ def merge_schedules(schedule1, schedule2):
     return result
 
 
+print("Problem 5:")
 print(merge_schedules("abc", "pqr"))
 print(merge_schedules("ab", "pqrs"))
 print(merge_schedules("abcd", "pq"))
