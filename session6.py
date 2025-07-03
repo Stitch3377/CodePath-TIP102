@@ -1,4 +1,7 @@
-from collections import deque
+"""
+Session 6: Unit 3
+Breakout Problem Set - Standard Version 1
+"""
 
 
 def manage_stage_changes(changes):
