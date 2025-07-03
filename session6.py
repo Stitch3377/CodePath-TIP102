@@ -18,7 +18,7 @@ def manage_stage_changes(changes):
                 cancelled_perf = cancelled.pop()
             except IndexError:
                 cancelled_perf = None
-            if cancelled_perf != None:
+            if cancelled_perf is not None:
                 performance.append(cancelled_perf)
     return performance
 
@@ -73,11 +73,11 @@ print()
 def collect_festival_points(points):
     """Problem 3"""
     stack = []
-    sum = 0
+    total = 0
     for booth in points:
         stack.append(booth)
-        sum += stack[-1]
-    return sum
+        total += stack[-1]
+    return total
 
 
 print("Problem 3:")
@@ -100,14 +100,14 @@ def booth_navigation(clues):
 
 
 print("Problem 4:")
-clues = [1, 2, "back", 3, 4]
-print(booth_navigation(clues))
+booth_clues = [1, 2, "back", 3, 4]
+print(booth_navigation(booth_clues))
 
-clues = [5, 3, 2, "back", "back", 7]
-print(booth_navigation(clues))
+booth_clueses = [5, 3, 2, "back", "back", 7]
+print(booth_navigation(booth_clues))
 
-clues = [1, "back", 2, "back", "back", 3]
-print(booth_navigation(clues))
+booth_clues = [1, "back", 2, "back", "back", 3]
+print(booth_navigation(booth_clues))
 print()
 
 
