@@ -257,9 +257,9 @@ def frequency_sort(signals):
         if signal in freq:
             freq[signal] += 1
         else:
-            freq[signal] = 0
+            freq[signal] = 1
 
-    sorted_signals = sorted(signals, key=lambda x: (freq[x], x))
+    sorted_signals = sorted(signals, key=lambda x: (freq[x], -x))
 
     return sorted_signals
 
@@ -272,4 +272,26 @@ signals3 = [-1, 1, -6, 4, 5, -6, 1, 4, 1]
 print(frequency_sort(signals1))
 print(frequency_sort(signals2))
 print(frequency_sort(signals3))
+print()
+
+
+def find_final_hub(paths):
+    """Problem 12"""
+    starting_hubs = set()
+    for hubA, hubB in paths:
+        starting_hubs.add(hubA)
+
+    for start, end in paths:
+        if end not in starting_hubs:
+            return end
+
+
+print("Problem 12:")
+paths1 = [["Earth", "Mars"], ["Mars", "Titan"], ["Titan", "Europa"]]
+paths2 = [["Alpha", "Beta"], ["Gamma", "Alpha"], ["Beta", "Delta"]]
+paths3 = [["StationA", "StationZ"]]
+
+print(find_final_hub(paths1))
+print(find_final_hub(paths2))
+print(find_final_hub(paths3))
 print()
