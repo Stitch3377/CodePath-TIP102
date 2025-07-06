@@ -1,9 +1,9 @@
-from collections import deque
-
 """
 Session 5: Unit 3
 Breakout Problem Set - Standard Version 2
 """
+
+from collections import deque
 
 
 def is_valid_post_format(posts):
