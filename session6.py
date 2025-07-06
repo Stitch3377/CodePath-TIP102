@@ -136,3 +136,50 @@ print("Problem 5:")
 print(merge_schedules("abc", "pqr"))
 print(merge_schedules("ab", "pqrs"))
 print(merge_schedules("abcd", "pq"))
+print()
+
+
+def next_greater_event(schedule1, schedule2):
+    """Problem 6"""
+    stack = []
+    greater = {}
+
+    for event_pop in reversed(schedule2):
+        while stack and stack[-1] <= event_pop:
+            stack.pop()
+        greater[event_pop] = stack[-1] if stack else -1
+        stack.append(event_pop)
+
+    return [greater[num] for num in schedule1]
+
+
+print("Problem 6:")
+print(next_greater_event([4, 1, 2], [1, 3, 4, 2]))
+print(next_greater_event([2, 4], [1, 2, 3, 4]))
+print()
+
+
+def sort_performances_by_type(performances):
+    """Problem 7"""
+    left = 0
+    right = len(performances) - 1
+
+    while left < right:
+        if performances[left] % 2 == 0:
+            left += 1
+        elif performances[right] % 2 == 1:
+            right -= 1
+        else:
+            old_left = performances[left]
+            old_right = performances[right]
+            performances[left] = old_right
+            performances[right] = old_left
+            left += 1
+            right -= 1
+    return performances
+
+
+print("Problem 7:")
+print(sort_performances_by_type([3, 1, 2, 4]))
+print(sort_performances_by_type([0]))
+print()
