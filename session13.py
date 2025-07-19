@@ -1,7 +1,6 @@
 """
 Session 13: Unit 7
-Breakout Problem Set - Standard Version 1
-"""
+Breakout Problem Set - Standard"""
 
 
 def count_suits_iterative(suits):
